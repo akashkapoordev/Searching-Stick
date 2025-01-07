@@ -135,6 +135,9 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\Event\EventService.cpp" />
+    <ClCompile Include="source\GamePlay\GamePlayService.cpp" />
+    <ClCompile Include="source\GamePlay\GamePlayView.cpp" />
+    <ClCompile Include="source\GamePlay\GamePlayController.cpp" />
     <ClCompile Include="source\Global\Config.cpp" />
     <ClCompile Include="source\Global\ServiceLocator.cpp" />
     <ClCompile Include="source\Graphics\GraphicService.cpp" />
@@ -151,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Event\EventService.h" />
+    <ClInclude Include="include\GamePlay\GamePlayController.h" />
+    <ClInclude Include="include\GamePlay\GamePlayService.h" />
+    <ClInclude Include="include\GamePlay\GamePlayView.h" />
     <ClInclude Include="include\Global\Config.h" />
     <ClInclude Include="include\Global\ServiceLocator.h" />
     <ClInclude Include="include\Graphics\GraphicService.h" />
