@@ -23,7 +23,19 @@ namespace GamePlay
 	{
 		gameplay_controller->render();
 	}
+	void GamePlayService::searchElement(Collection::SearchType type)
+	{
+		stickcollection_controller->searchElement(type);
+	}
 	void GamePlayService::reset()
 	{
+	}
+	Collection::SearchType GamePlayService::getCurrentSearch()
+	{
+		return Collection::SearchType();
+	}
+	int GamePlayService::getNumberOfSticks()
+	{
+		return 0;
 	}
 }
