@@ -26,6 +26,8 @@ namespace GamePlay
 		GamePlayController* gameplay_controller;
 		Collection::StickCollectionController* stickcollection_controller;
 
+		void initializeRandomSeed();
+
 	};
 
 }
