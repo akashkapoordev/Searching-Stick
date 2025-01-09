@@ -1,5 +1,5 @@
 #pragma once
-
+#include "GamePlay/StickCollection/StickCollectionController.h"
 namespace GamePlay
 {
 	class GamePlayView;
@@ -19,5 +19,6 @@ namespace GamePlay
 
 	private:
 		GamePlayView* gameplay_view;
+		Collection::StickCollectionController* collection_controller;
 	};
 }

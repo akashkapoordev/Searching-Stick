@@ -4,11 +4,11 @@ namespace GamePlay
 {
 	namespace Collection
 	{
-		class StckViewCollection
+		class StickCollectionView
 		{
 		public:
-			StckViewCollection();
-			~StckViewCollection();
+			StickCollectionView();
+			~StickCollectionView();
 
 			void initialize();
 			void update();

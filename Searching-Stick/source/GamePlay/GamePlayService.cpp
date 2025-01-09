@@ -32,10 +32,10 @@ namespace GamePlay
 	}
 	Collection::SearchType GamePlayService::getCurrentSearch()
 	{
-		return Collection::SearchType();
+		return getCurrentSearch();
 	}
 	int GamePlayService::getNumberOfSticks()
 	{
-		return 0;
+		return getNumberOfSticks();
 	}
 }

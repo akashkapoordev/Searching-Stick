@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -133,6 +133,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\GamePlay\StickCollection\StickCollectionView.cpp" />
+    <ClCompile Include="source\GamePlay\StickCollection\StickCollectionModel.cpp" />
+    <ClCompile Include="source\GamePlay\StickCollection\StickCollectionController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\Event\EventService.cpp" />
     <ClCompile Include="source\GamePlay\GamePlayService.cpp" />
@@ -148,6 +151,7 @@
     <ClCompile Include="source\UI\UIElement\AnimatedImageView.cpp" />
     <ClCompile Include="source\UI\UIElement\ButtonView.cpp" />
     <ClCompile Include="source\UI\UIElement\ImageView.cpp" />
+    <ClCompile Include="source\UI\UIElement\RectangleShapeView.cpp" />
     <ClCompile Include="source\UI\UIElement\TextView.cpp" />
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
     <ClCompile Include="source\UI\UISerive.cpp" />
@@ -157,6 +161,10 @@
     <ClInclude Include="include\GamePlay\GamePlayController.h" />
     <ClInclude Include="include\GamePlay\GamePlayService.h" />
     <ClInclude Include="include\GamePlay\GamePlayView.h" />
+    <ClInclude Include="include\GamePlay\StickCollection\Stick.h" />
+    <ClInclude Include="include\GamePlay\StickCollection\StickCollectionController.h" />
+    <ClInclude Include="include\GamePlay\StickCollection\StickCollectionModel.h" />
+    <ClInclude Include="include\GamePlay\StickCollection\StickCollectionView.h" />
     <ClInclude Include="include\Global\Config.h" />
     <ClInclude Include="include\Global\ServiceLocator.h" />
     <ClInclude Include="include\Graphics\GraphicService.h" />

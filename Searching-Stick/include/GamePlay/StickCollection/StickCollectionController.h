@@ -24,7 +24,7 @@ namespace GamePlay
 			void searchElement(SearchType type);
 
 			SearchType getSearchType();
-			int numberOfElements();
+			int getNumberOfElements();
 
 			void reset();
 

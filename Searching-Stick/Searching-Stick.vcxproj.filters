@@ -69,6 +69,18 @@
     <ClCompile Include="source\GamePlay\GamePlayService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\GamePlay\StickCollection\StickCollectionView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GamePlay\StickCollection\StickCollectionModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GamePlay\StickCollection\StickCollectionController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\UIElement\RectangleShapeView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Event\EventService.h">
@@ -123,6 +135,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\GamePlay\GamePlayService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GamePlay\StickCollection\Stick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GamePlay\StickCollection\StickCollectionController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GamePlay\StickCollection\StickCollectionModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GamePlay\StickCollection\StickCollectionView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
