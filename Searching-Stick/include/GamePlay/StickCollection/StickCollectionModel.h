@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics/Color.hpp>
+#include <thread>
 
 namespace GamePlay
 {
@@ -27,6 +28,7 @@ namespace GamePlay
 
 			int linear_search_delay = 120;
 			int number_of_elements = 100;
+			
 
 			StickCollectionModel();
 			~StickCollectionModel();
@@ -36,10 +38,10 @@ namespace GamePlay
 
 
 			void setElementSpacing(float space);
-
+			
 
 		private:
-
+		
 		};
 
 	}

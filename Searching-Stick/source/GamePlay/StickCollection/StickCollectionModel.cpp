@@ -20,5 +20,6 @@ namespace GamePlay
 		{
 			elements_spacing = space;
 		}
+	
 	}
 }

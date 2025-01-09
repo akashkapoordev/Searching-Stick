@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <thread>>
 
 namespace GamePlay
 {
@@ -31,12 +32,17 @@ namespace GamePlay
 			int getNumberOfComparisons();
 			int getNumberOFArrayAccess();
 
+			int current_operation_dealy;
+			int getDelayMilliSeconds();
+
 		private:
 			StickCollectionModel* collection_model;
 			StickCollectionView* collection_view;
 			std::vector<Stick*> sticks;
 			SearchType search_type;
 			Stick* stick_to_search;
+			std::thread search_thread;
+			void joinThread();
 
 		
 
@@ -54,6 +60,8 @@ namespace GamePlay
 			int number_of_array_access;
 
 			void resetVariables();
+
+			void processThreadState();
 
 		};
 

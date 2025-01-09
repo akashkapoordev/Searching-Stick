@@ -20,21 +20,25 @@ namespace GamePlay
 		}
 		StickCollectionController::~StickCollectionController()
 		{
+			if (search_thread.joinable()) search_thread.join();
 			for (int i = 0; i < sticks.size(); i++)
 			{
 				delete(sticks[i]);
 			}
+			sticks.clear();
 
 			delete(collection_model);
 			delete(collection_view);
 		}
 		void StickCollectionController::initialize()
 		{
+			collection_model->initialize();
 			initializeStick();
 			reset();
 		}
 		void StickCollectionController::update()
 		{
+			processThreadState();
 			for (int i = 0; i < sticks.size(); i++)
 			{
 				sticks[i]->stick_view->update();
@@ -53,7 +57,8 @@ namespace GamePlay
 			switch (search_type)
 			{
 			case GamePlay::Collection::LINEAR:
-				processLinearSearch();
+				current_operation_dealy = collection_model->linear_search_delay;
+				search_thread = std::thread(&StickCollectionController::processLinearSearch, this);
 				break;
 			case GamePlay::Collection::BINARY:
 				break;
@@ -76,6 +81,7 @@ namespace GamePlay
 			resetStickColor();
 			resetSearchStick();
 			resetVariables();
+			current_operation_dealy = 0;
 
 		}
 		int StickCollectionController::getNumberOfComparisons()
@@ -85,6 +91,14 @@ namespace GamePlay
 		int StickCollectionController::getNumberOFArrayAccess()
 		{
 			return number_of_array_access;
+		}
+		int StickCollectionController::getDelayMilliSeconds()
+		{
+			return current_operation_dealy;
+		}
+		void  StickCollectionController::joinThread()
+		{
+			search_thread.join();
 		}
 		void StickCollectionController::initializeStick()
 		{
@@ -175,6 +189,7 @@ namespace GamePlay
 				else
 				{
 					sticks[i]->stick_view->setFillColor(collection_model->processing_element_color);
+					std::this_thread::sleep_for(std::chrono::milliseconds(current_operation_dealy));
 					sticks[i]->stick_view->setFillColor(collection_model->element_color);
 				}
 			}
@@ -183,6 +198,13 @@ namespace GamePlay
 		{
 			number_of_comparisons = 0;
 			number_of_array_access = 0;
+		}
+		void StickCollectionController::processThreadState()
+		{
+			if (search_thread.joinable() && stick_to_search == nullptr)
+			{
+				joinThread();
+			}
 		}
 	}
 }
