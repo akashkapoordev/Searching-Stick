@@ -34,6 +34,7 @@ namespace GamePlay
 
 			int current_operation_dealy;
 			int getDelayMilliSeconds();
+			sf::String getTimeComplexity();
 
 		private:
 			StickCollectionModel* collection_model;
@@ -62,6 +63,8 @@ namespace GamePlay
 			void resetVariables();
 
 			void processThreadState();
+
+			sf::String time_complexity;
 
 		};
 
