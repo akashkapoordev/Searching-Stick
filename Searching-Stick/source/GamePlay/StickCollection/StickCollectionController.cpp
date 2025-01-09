@@ -54,7 +54,7 @@ namespace GamePlay
 		}
 		void StickCollectionController::searchElement(SearchType search_type)
 		{
-			//this->search_type = search_type;
+			this->search_type = search_type;
 			switch (search_type)
 			{
 			case GamePlay::Collection::LINEAR:

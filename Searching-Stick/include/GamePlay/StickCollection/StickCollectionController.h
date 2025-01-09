@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <thread>>
+#include <SFML/Graphics.hpp> 
 
 namespace GamePlay
 {

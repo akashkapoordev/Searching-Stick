@@ -41,11 +41,27 @@ namespace GamePlay
 	}
 	Collection::SearchType GamePlayService::getCurrentSearch()
 	{
-		return getCurrentSearch();
+		return stickcollection_controller->getSearchType();
 	}
 	int GamePlayService::getNumberOfSticks()
 	{
-		return getNumberOfSticks();
+		return stickcollection_controller->getNumberOfElements();
+	}
+	int GamePlayService::getNumberOfComaprison()
+	{
+		return stickcollection_controller->getNumberOfComparisons();
+	}
+	int GamePlayService::getDelay()
+	{
+		return stickcollection_controller->getDelayMilliSeconds();
+	}
+	int GamePlayService::getNumberOfArrayAccess()
+	{
+		return stickcollection_controller->getNumberOFArrayAccess();
+	}
+	sf::String GamePlayService::getTimeComplexity()
+	{
+		return stickcollection_controller->getTimeComplexity();
 	}
 	void GamePlayService::initializeRandomSeed()
 	{

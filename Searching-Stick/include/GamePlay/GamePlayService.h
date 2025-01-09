@@ -21,6 +21,10 @@ namespace GamePlay
 
 		Collection::SearchType getCurrentSearch();
 		int getNumberOfSticks();
+		int getNumberOfComaprison();
+		int getDelay();
+		int getNumberOfArrayAccess();
+		sf::String getTimeComplexity();
 
 	private:
 		GamePlayController* gameplay_controller;
