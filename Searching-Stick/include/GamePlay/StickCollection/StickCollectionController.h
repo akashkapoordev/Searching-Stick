@@ -57,6 +57,7 @@ namespace GamePlay
 			void shuffleStick();
 			void resetSearchStick();
 			void processLinearSearch();
+			void processBinarySearch();
 
 			int number_of_comparisons;
 			int number_of_array_access;
@@ -66,6 +67,9 @@ namespace GamePlay
 			void processThreadState();
 
 			sf::String time_complexity;
+
+			void sortElements();
+			bool compareElements(const Stick* a, const Stick* b)const;
 
 		};
 

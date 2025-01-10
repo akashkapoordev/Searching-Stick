@@ -63,6 +63,10 @@ namespace GamePlay
 				search_thread = std::thread(&StickCollectionController::processLinearSearch, this);
 				break;
 			case GamePlay::Collection::BINARY:
+				sortElements();
+				time_complexity = "O(log n)";
+				current_operation_dealy = collection_model->binary_search_delay;
+				search_thread = std::thread(&StickCollectionController::processBinarySearch, this);
 				break;
 			default:
 				break;
@@ -200,6 +204,43 @@ namespace GamePlay
 				}
 			}
 		}
+		void StickCollectionController::processBinarySearch()
+		{
+			int left = 0;
+			int right = sticks.size();
+
+			while (left < right)
+			{
+				int mid = (left+right)/2;
+				number_of_array_access += 2;
+				number_of_comparisons++;
+				ServiceLocator::getInstance()->getSoundService()->playSound(Sound::SoundType::COMPARE_SFX);
+
+				if(sticks[mid] == stick_to_search)
+				{
+					stick_to_search->stick_view->setFillColor(collection_model->found_element_color);
+					stick_to_search = nullptr;
+					delete(stick_to_search);
+					return;
+				}
+
+				sticks[mid]->stick_view->setFillColor(collection_model->processing_element_color);
+				std::this_thread::sleep_for(std::chrono::milliseconds(current_operation_dealy));
+				sticks[mid]->stick_view->setFillColor(collection_model->element_color);
+
+				number_of_array_access++;
+
+				if (sticks[mid]->data <= stick_to_search->data)
+				{
+					left = mid;
+				}
+				else
+				{
+					right = mid;
+				}
+			}
+		}
+
 		void StickCollectionController::resetVariables()
 		{
 			number_of_comparisons = 0;
@@ -212,6 +253,17 @@ namespace GamePlay
 				joinThread();
 			}
 		}
+		void StickCollectionController::sortElements()
+		{
+			std::sort(sticks.begin(), sticks.end(), [this](const Stick* a, const Stick* b) {return compareElements(a, b); });
+
+			updatePosition();
+		}
+		bool StickCollectionController::compareElements(const Stick* a, const Stick* b) const
+		{
+			return a->data < b->data;
+		}
+
 	}
 }
 

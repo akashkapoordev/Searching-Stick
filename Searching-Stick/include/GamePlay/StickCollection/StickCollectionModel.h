@@ -28,6 +28,7 @@ namespace GamePlay
 
 			int linear_search_delay = 120;
 			int number_of_elements = 100;
+			int binary_search_delay = 120;
 			
 
 			StickCollectionModel();
